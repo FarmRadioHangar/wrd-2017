@@ -36,8 +36,14 @@
 
     <style type="text/css">
       .navbar-default .navbar-header .navbar-brand,
-      .navbar-default .nav>li>a, .navbar-default .nav>li>a:focus {
-        color: black !important;
+      .navbar-default .nav>li>a, .navbar-default .nav>li>a:focus,
+      .navbar-default .nav > li > a:hover, .navbar-default .nav > li > a:focus:hover {
+        color: #900c3f;
+      }
+
+      .navbar-default.affix .navbar-header .navbar-brand,
+      .navbar-default.affix .nav > li > a, .navbar-default.affix .nav > li > a:focus {
+        color: #900c3f;
       }
 
       #logo {
@@ -52,6 +58,15 @@
         background-repeat: no-repeat; 
         margin-bottom: 3px;
         margin-left: 10px;
+      }
+
+      .btn-outline.signup {
+        color: #6a6a6a;
+      }
+
+
+      .btn-outline.signup:hover {
+        color: white;
       }
     </style>
 
@@ -77,9 +92,7 @@
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
                 <p data-translatable>
-                  <a class="navbar-brand page-scroll" href="#page-top">wrd2017</a>
-                  <a class="navbar-brand page-scroll" href="#page-top">wrd2017</a>
-                  <a class="navbar-brand page-scroll" href="#page-top">wrd2017</a>
+                  <a class="navbar-brand page-scroll" href="#page-top"><b>Happy World Radio Day 2017</b></a>
                 </p>
             </div>
 
@@ -93,7 +106,10 @@
                         <a class="page-scroll" href="#infographics">Visuals</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#participate">Participate now</a>
+                        <a class="page-scroll" href="#participate">Participate now!</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#uliza">Uliza</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -121,31 +137,46 @@
     </section>
 
     <section id="participate" class="cta" style="background-image: url(img/mj_voxbox.jpg);">
-        <div class="cta-content">
-            <div class="container">
-
-              <div class="row">
-                <div class="col-md-6">
-
-                  <h2>Call &amp;<br>Participate.</h2>
-                  <!--
-                  <a href="#contact" class="btn btn-outline btn-xl page-scroll">Let's Get Started!</a>
-                    -->
-
-                </div>
-                <div class="col-md-6">
-
-                  <iframe src="public/index.html" width="300" height="500" style="border: none;"></iframe>
-
-                </div>
-              </div>
-
-
-
+      <div class="cta-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+              <h2 style="max-width: none;">Call<br>+1 647-492-5611<br>to participate now</h2>
+              <p style="font-size: 22px; color: white; line-height: 1.5; max-width: 600px;">
+                Normal charges apply. Or use the dialer to call <b style="color:#ffd300;">for free</b> from your browser.
+              </p>
             </div>
-
+            <div class="col-md-5">
+              <iframe src="public/index.html" width="300" height="500" style="border: none;"></iframe>
+            </div>
+          </div>
         </div>
-        <div class="overlay"></div>
+      </div>
+      <div class="overlay"></div>
+    </section>
+
+    <section id="uliza" class="" style="padding: 100px 0 180px; background: white;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="img/ulizaScreenshot.png" style="width: 75%;" />
+          </div>
+          <div class="col-md-6">
+            <div class="section-heading">
+              <h2>Uliza &mdash; a polling platform for interactive radio</h2>
+              <p class="text-muted">Uliza can help you:</p>
+              <ul class="text-muted" style="font-size: 16px;">
+                <li>Improve your programming through audience feedback.</li>
+                <li>Participate in worldwide polls &mdash; get noticed internationally.</li>
+                <li>Know your audience &mdash; get more sponsors.</li>
+              </ul>
+              <div style="padding:40px 0; display:flex; justify-content:center; align-items:center;">
+                <a href="http://farmradio.us2.list-manage2.com/subscribe?u=ce0e787dbe9d818eda16573eb&id=4ed089ce94" class="signup btn btn-outline btn-xl">Get started now!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="contact" class="contact bg-primary" style="padding: 100px 0 180px;">

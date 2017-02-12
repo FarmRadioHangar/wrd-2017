@@ -30246,7 +30246,7 @@ function randomColor() {
 }
 
 var PI_2 = Math.PI * 2;
-var PARTICLE_LIMIT = 200;
+var PARTICLE_LIMIT = 220;
 
 function isLiked(message) {
   return message && 'TRUE' === message.liked;

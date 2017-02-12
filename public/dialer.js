@@ -75,12 +75,15 @@ new Vue({
     // or hang up the current call
     toggleCall: function() {
       if (!this.onPhone) {
+        /*
         this.muted = false;
         this.onPhone = true;
         // make outbound call with current number
         var n = '+' + this.countryCode + this.currentNumber.replace(/\D/g, '');
         this.connection = Twilio.Device.connect({ number: n });
         this.log = 'Calling ' + n;
+        */
+        alert(this.currentNumber);
       } else {
         // hang up call in progress
         Twilio.Device.disconnectAll();
