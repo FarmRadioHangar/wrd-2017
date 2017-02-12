@@ -30275,7 +30275,7 @@ function handleNewMessages(messages) {
 function normal(context) {
   context.beginPath();
   context.arc(0, 0, 0.3, 0, PI_2, true);
-  context.globalAlpha = 0.6;
+  context.globalAlpha = 0.7;
   context.fill();
 };
 
