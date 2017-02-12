@@ -162,7 +162,7 @@ class Player extends React.Component {
               onPlay    = {this._handlePlay}
               onCanPlay = {this._handleCanPlay}
             />
-            <a href='#/' style={{marginLeft: '40px', marginBottom: '2px'}}>
+            <a href='#/' style={{marginLeft: '10px', marginBottom: '2px'}}>
               <StopIcon size={26} color={message ? '#5a5a5a' : '#dadada'} />
             </a>
           </div>

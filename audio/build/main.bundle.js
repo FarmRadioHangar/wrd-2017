@@ -12859,7 +12859,7 @@ exports = module.exports = __webpack_require__(120)();
 
 
 // module
-exports.push([module.i, ".player__player___3lQ2X {\n  display: flex; \n  align-items: center; \n  justify-content: center; \n  position: fixed; \n  z-index: 2;\n  bottom: 0; \n  left: 0; \n  width: 100%; \n  height: 72px; \n  background-color: #fafafa;\n  border-top: 1px solid #cdcdcd;\n}\n\n.player__wave___3k5No {\n  position: absolute;\n  left: calc(50% - 35px);\n  top: 36%;\n}\n\n.player__notice___2i1Q7 {\n  position: absolute;\n  width: 100%;\n  height: 84%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: black;\n}\n\n.player__error___26FG_ {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, ".player__player___3lQ2X {\n  display: flex; \n  align-items: center; \n  justify-content: center; \n  position: fixed; \n  z-index: 2;\n  bottom: 0; \n  left: 0; \n  width: 100%; \n  height: 72px; \n  background-color: #fafafa;\n  border-top: 1px solid #cdcdcd;\n}\n\n.player__wave___3k5No {\n  position: absolute;\n  left: calc(50% - 35px);\n  top: 46%;\n}\n\n.player__notice___2i1Q7 {\n  position: absolute;\n  width: 100%;\n  height: 84%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: black;\n}\n\n.player__error___26FG_ {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -30047,7 +30047,7 @@ var Player = function (_React$Component2) {
             }),
             _react2.default.createElement(
               'a',
-              { href: '#/', style: { marginLeft: '40px', marginBottom: '2px' } },
+              { href: '#/', style: { marginLeft: '10px', marginBottom: '2px' } },
               _react2.default.createElement(_stopCircleO2.default, { size: 26, color: message ? '#5a5a5a' : '#dadada' })
             )
           )
