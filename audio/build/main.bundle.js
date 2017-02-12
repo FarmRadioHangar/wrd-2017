@@ -30208,7 +30208,7 @@ document.addEventListener('mousedown', function (event) {
   }
 }, false);
 
-var ws = new WebSocket('ws://wrd.uliza.fm:3004');
+var ws = new WebSocket('wss://wrd.uliza.fm:3004');
 
 ws.onopen = function (event) {
   console.log('WebSocket connetion established.');
