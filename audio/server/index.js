@@ -3,7 +3,7 @@ var creds = require('./client_secret.json');
 var WebSocket = require('ws');
 
 var api = new GoogleSpreadsheet('166G5N1h02rYYVwKRUFmcHcOyY3UAXLZ0YPPukxfd7WA'),
-    wss = new WebSocket.Server({port: 3004, perMessageDeflate: false}),
+    wss = new WebSocket.Server({port: 3005, perMessageDeflate: false}),
     messages = [];
 
 var TIMEOUT_INTERVAL = 15000;
