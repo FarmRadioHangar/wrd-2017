@@ -30055,7 +30055,7 @@ var Player = function (_React$Component2) {
         buffering && _react2.default.createElement(
           'div',
           { className: _player2.default.wave },
-          _react2.default.createElement(_betterReactSpinkit.Wave, { color: '#1a1a1a', columns: 6, size: 70 })
+          _react2.default.createElement(_betterReactSpinkit.Wave, { color: '#4a4a4a', columns: 6, size: 70 })
         ),
         error && _react2.default.createElement(
           'div',

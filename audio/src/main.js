@@ -169,7 +169,7 @@ class Player extends React.Component {
         </div>
         {buffering && (
           <div className={styles.wave}>
-            <Wave color='#1a1a1a' columns={6} size={70} />
+            <Wave color='#4a4a4a' columns={6} size={70} />
           </div>
         )}
         {error && (
