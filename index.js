@@ -4,6 +4,8 @@ const http = require('http');
 const express = require('express');
 const { urlencoded } = require('body-parser');
 const twilio = require('twilio');
+require('dotenv').config()
+
 
 var errorhandler = require('errorhandler');
 var morgan  = require('morgan');
@@ -18,7 +20,7 @@ app.use(morgan('combined'));
 
 // Generate a Twilio Client capability token
 app.get('/token', (request, response) => {
-  var callerId = request.query.callerId; 
+  var callerId = request.query.callerId;
   let capability = new twilio.Capability(
     process.env.TWILIO_ACCOUNT_SID,
     process.env.TWILIO_AUTH_TOKEN
