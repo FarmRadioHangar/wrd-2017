@@ -39,6 +39,20 @@
       .navbar-default .nav>li>a, .navbar-default .nav>li>a:focus {
         color: black !important;
       }
+
+      #logo {
+        position: fixed; 
+        z-index: 100; 
+        left: 0; 
+        bottom: 0px; 
+        width: 200px; 
+        height: 60px; 
+        background: url(img/logo.png);     
+        background-size: 150px; 
+        background-repeat: no-repeat; 
+        margin-bottom: 3px;
+        margin-left: 10px;
+      }
     </style>
 
     <script>
@@ -52,6 +66,8 @@
 
 </head>
 <body id="page-top" style="background: #f0f2fe;">
+
+    <div id="logo"></div>
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -70,13 +86,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li data-translatable>
+                    <li>
                         <a class="page-scroll" href="#audio">Audio</a>
-                        <a class="page-scroll" href="#audio">Messages</a>
-                        <a class="page-scroll" href="#audio">Poop</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#infographics">Infographics</a>
+                        <a class="page-scroll" href="#infographics">Visuals</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#participate">Participate now</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -87,43 +104,6 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <!--
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="header-content">
-                        <div class="header-content-inner">
-                            <h1>New Age is an app landing page that will help you beautifully showcase your new mobile app, or anything else!</h1>
-                            <a href="#audio" class="btn btn-outline btn-xl page-scroll">Start Now for Free!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device">
-                                <div class="screen">
-                                    <img src="img/demo-screen-1.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="button">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div>
-      <nav id="nav">
-        <a href="#" title="Change current language to English" data-lang-ref="en">English</a>
-        <a href="#" title="Remplacer les textes par leur version en Français" data-lang-ref="fr">Français</a>
-        <a href="#" title="Alterar o idioma atual para Português" data-lang-ref="pt-br">Português</a>
-      </nav>
-    </div>
-    -->
 
     <section id="audio" class="download bg-primary text-center" style="padding: 0; background: none;">
       <div id="player"></div>
@@ -140,7 +120,7 @@
       </div>
     </section>
 
-    <section class="cta" style="background-image: url(img/mj_voxbox.jpg);">
+    <section id="participate" class="cta" style="background-image: url(img/mj_voxbox.jpg);">
         <div class="cta-content">
             <div class="container">
 
