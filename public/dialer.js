@@ -33,7 +33,7 @@ new Vue({
     var self = this;
 
     // Fetch Twilio capability token from our Node.js server
-    $.getJSON('/token', {callerId:'+49 1573 5985777'}).done(function(data) {
+    $.getJSON('/token', {callerId:'+4915735985777'}).done(function(data) {
       Twilio.Device.setup(data.token);
     }).fail(function(err) {
       console.log(err);
