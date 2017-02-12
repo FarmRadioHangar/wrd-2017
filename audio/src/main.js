@@ -360,9 +360,9 @@ function handleNewMessages(messages) {
       color: randomColor(), 
       program: isLiked(message) ? favorite : normal 
     }));
-    particle.position.x = Math.random() * 800 - 400;
-    particle.position.y = Math.random() * 800 - 400;
-    particle.position.z = Math.random() * 800 - 400;
+    particle.position.x = Math.random() * 1000 - 500;
+    particle.position.y = Math.random() * 1000 - 500;
+    particle.position.z = Math.random() * 1000 - 500;
     particle.scale.x = particle.scale.y = Number(message.length) + 50;
     particle.userData = { message: message };
     message.particle = particle;
