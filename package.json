@@ -1,30 +1,26 @@
 {
-  "name": "new-age",
-  "title": "New Age",
-  "version": "3.3.7",
-  "homepage": "http://startbootstrap.com/template-overviews/new-age",
-  "author": "Start Bootstrap",
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
+  "name": "browser-dailer-vue",
+  "version": "1.0.0",
+  "description": "A browser-based dialer UI powered by Twilio Client",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "NODE_ENV=test TWILIO_ACCOUNT_SID=my-account-sid TWILIO_AUTH_TOKEN=my-auth-token TWILIO_NUMBER=my-twilio-number TWILIO_TWIML_APP_SID=app-sid ./node_modules/mocha/bin/mocha spec --recursive"
+  },
+  "author": "Twilio DevEd",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "errorhandler": "~1.1.1",
+    "morgan": "~1.2.2",
+    "twilio": "^2.11.0",
+    "dotenv": "4.0.0"
   },
   "devDependencies": {
-    "bootstrap": "^3.3.7",
-    "browser-sync": "^2.13.0",
-    "font-awesome": "^4.6.3",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.10",
-    "gulp-header": "^1.8.7",
-    "gulp-less": "^3.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.4",
-    "jquery": "^1.11.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BlackrockDigital/startbootstrap-new-age.git"
-  },
-  "dependencies": {
-    "simple-line-icons": "^2.3.2"
+    "chai": "^3.5.0",
+    "cheerio": "^0.22.0",
+    "mocha": "^3.1.0",
+    "supertest": "^2.0.0"
   }
 }
