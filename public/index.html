@@ -27,6 +27,7 @@
     <div class="input-group input-group-sm" v-cloak>
 
       <!-- Create a country code dropdown -->
+      <!--
       <div class="input-group-btn">
         <button type="button" class="btn btn-default dropdown-toggle" 
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,17 +43,28 @@
           </li>
         </ul>
       </div>
+      -->
 
       <!-- Telephone input field -->
+      <!--
       <input type="tel" class="form-control" v-model="currentNumber"
         placeholder="555-666-7777">
+      -->
+
+      <input type="tel" class="form-control" v-model="currentNumber"
+        value="+1 647-492-5611" placeholder="+1 647-492-5611" disabled>
+
     </div>
 
     <!-- Audio Controls -->
     <div class="controls">
       <button class="btn btn-circle" @click="toggleCall()"
+        :class="[ onPhone ? 'btn-danger': 'btn-success' ]">
+        <!--
+      <button class="btn btn-circle" @click="toggleCall()"
         :class="[ onPhone ? 'btn-danger': 'btn-success' ]"
         :disabled="!validPhone">
+        -->
         <i class="fa fa-fw fa-phone"
           :class="[ onPhone ? 'fa-close': 'fa-phone' ]"></i>
       </button>
