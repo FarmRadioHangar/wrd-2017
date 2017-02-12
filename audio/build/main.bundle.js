@@ -30047,7 +30047,7 @@ var Player = function (_React$Component2) {
             }),
             _react2.default.createElement(
               'a',
-              { href: '#/', style: { marginLeft: '40px', marginBottom: '2px' } },
+              { href: '#/', style: { marginLeft: '10px', marginBottom: '2px' } },
               _react2.default.createElement(_stopCircleO2.default, { size: 26, color: message ? '#5a5a5a' : '#dadada' })
             )
           )
