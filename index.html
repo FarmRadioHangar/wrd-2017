@@ -53,6 +53,14 @@
         margin-bottom: 3px;
         margin-left: 10px;
       }
+
+      .btn-outline.signup {
+        color: #6a6a6a;
+      }
+
+      .btn-outline.signup:hover {
+        color: white;
+      }
     </style>
 
     <script>
@@ -94,6 +102,9 @@
                         <a class="page-scroll" href="#participate">Participate now!</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#uliza">Uliza</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -121,29 +132,47 @@
     <section id="participate" class="cta" style="background-image: url(img/mj_voxbox.jpg);">
         <div class="cta-content">
             <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <h2>Call &amp;<br>Participate.</h2>
+                </div>
+                <div class="col-md-6">
+                  <iframe src="public/index.html" width="300" height="500" style="border: none;"></iframe>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+
+    <section id="uliza" class="" style="padding: 100px 0 180px; background: white;">
+      <div class="container">
 
               <div class="row">
                 <div class="col-md-6">
 
-                  <h2>Call &amp;<br>Participate.</h2>
-                  <!--
-                  <a href="#contact" class="btn btn-outline btn-xl page-scroll">Let's Get Started!</a>
-                    -->
+                  <img src="img/ulizaScreenshot.png" style="width: 75%;" />
 
                 </div>
                 <div class="col-md-6">
 
-                  <iframe src="public/index.html" width="300" height="500" style="border: none;"></iframe>
+                  <div class="section-heading">
+                    <h2>Uliza &mdash; a polling platform for interactive radio</h2>
+                    <p class="text-muted">Uliza can help you:</p>
+                    <ul class="text-muted" style="font-size: 16px;">
+                      <li>Improve your programming through audience feedback.</li>
+                      <li>Participate in worldwide polls &mdash; get noticed internationally.</li>
+                      <li>Know your audience &mdash; get more sponsors.</li>
+                    </ul>
+                    <div style="padding:40px 0; display:flex; justify-content:center; align-items:center;">
+                      <a href="#contact" class="signup btn btn-outline btn-xl">Get started now!</a>
+                    </div>
+
+                  </div>
 
                 </div>
               </div>
-
-
-
-            </div>
-
-        </div>
-        <div class="overlay"></div>
+      </div>
     </section>
 
     <section id="contact" class="contact bg-primary" style="padding: 100px 0 180px;">
