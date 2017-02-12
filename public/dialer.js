@@ -83,7 +83,11 @@ new Vue({
         this.connection = Twilio.Device.connect({ number: n });
         this.log = 'Calling ' + n;
         */
-        alert(this.currentNumber);
+
+        this.muted = false;
+        this.onPhone = true;
+        this.connection = Twilio.Device.connect({ number: '+16474925611' });
+        this.log = 'Calling... ';
       } else {
         // hang up call in progress
         Twilio.Device.disconnectAll();
