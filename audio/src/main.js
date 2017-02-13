@@ -1,5 +1,6 @@
 import React      from 'react';
 import { render } from 'react-dom';
+import _          from 'underscore';
 import { Wave }   from 'better-react-spinkit';
 import ErrorIcon  from 'react-icons/lib/md/block';
 import StopIcon   from 'react-icons/lib/fa/stop-circle-o';
@@ -122,6 +123,11 @@ class Player extends React.Component {
           message   : null
         });
       }
+    } else if (location && location[0] === 'countries') {
+      const { countries } = this.props;
+      if ('all' === location[1] || countries.indexOf(location[1]) !== -1) {
+        rebuildScene(location[1]);
+      }
     } else {
       // Fallback route
       this.setState({
@@ -148,6 +154,26 @@ class Player extends React.Component {
   _handlePlay() { 
     console.log('=== Playing ===');
   }
+  _countryName(code) {
+    switch (code) {
+      case 'BF': return 'Burkina Faso';
+      case 'CA': return 'Canada';
+      case 'DE': return 'Germany';
+      case 'ET': return 'Ethiopia';
+      case 'GB': return 'Great Britain';
+      case 'GH': return 'Ghana';
+      case 'KE': return 'Kenya';
+      case 'LS': return 'Lesotho';
+      case 'MW': return 'Malawi';
+      case 'NG': return 'Nigeria';
+      case 'TZ': return 'Tanzania';
+      case 'UG': return 'Uganda';
+      case 'US': return 'United States';
+      case 'ZM': return 'Zambia';
+      case 'ZW': return 'Zimbabwe';
+    }
+    return code;
+  }
   render() {
     const { buffering, error, missing, src, message } = this.state;
     return (
@@ -165,6 +191,20 @@ class Player extends React.Component {
             <a href='#/' style={{marginLeft: '10px', marginBottom: '2px'}}>
               <StopIcon size={26} color={message ? '#5a5a5a' : '#dadada'} />
             </a>
+            <div style={{position: 'absolute', right: '20px'}}>
+              <div id="country-dropup" className="dropup">
+                <button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span className="caret"></span>
+                </button>
+                <ul className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
+                  <li><a href="#/countries/all">All</a></li>
+                  <li role="separator" className="divider"></li>
+                  {this.props.countries.map(country =>
+                    <li key={country}><a href={`#/countries/${country}`}>{this._countryName(country)}</a></li>
+                  )}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         {buffering && (
@@ -208,7 +248,8 @@ let $ = (() => {
     scene     : new THREE.Scene(),
     renderer  : new THREE.CanvasRenderer(),
     raycaster : new THREE.Raycaster(),
-    mouse     : new THREE.Vector2()
+    mouse     : new THREE.Vector2(),
+    country   : 'all'
   }
 })();
 
@@ -298,7 +339,20 @@ function viewportSize() {
   }
 }
 
+function hasClassName(el, className) {
+  if (!el) 
+    return false;
+  if (el.classList) {
+    return el.classList.contains(className);
+  } else {
+    return (new RegExp('(^| )' + className + '( |$)', 'gi')).test(el.className);
+  }
+}
+
 document.addEventListener('mousedown', (event) => {
+  if (hasClassName(document.getElementById('country-dropup'), 'open')) {
+    return;
+  }
   if (focused && $.visible) {
     focused.material.program = visited;
     focused.userData.visited = true;
@@ -327,13 +381,15 @@ ws.onmessage = (event) => {
   switch (message.type) {
     case 'messages_all':
       handleNewMessages(message.data.messages);
+      rebuildScene('all');
       render(
-        <Player />,
+        <Player countries={_.uniq(message.data.messages, item => item.country).map(m => m.country)} />,
         document.getElementById('player')
       );
       break;
     case 'messages_new':
       handleNewMessages(message.data.messages);
+      rebuildScene();
       break;
     case 'invalid':
     default:
@@ -353,24 +409,34 @@ function isLiked(message) {
   return message && 'TRUE' === message.liked;
 }
 
+function createParticle(message) {
+  let particle = new THREE.Sprite(new THREE.SpriteCanvasMaterial({ 
+    color: randomColor(), 
+    program: isLiked(message) ? favorite : normal 
+  }));
+  particle.position.x = Math.random() * 1000 - 500;
+  particle.position.y = Math.random() * 1000 - 500;
+  particle.position.z = Math.random() * 1000 - 500;
+  particle.scale.x = particle.scale.y = Number(message.length) + 50;
+  particle.userData = { message: message };
+  return particle;
+}
+
+function rebuildScene(country) {
+  if (country) {
+    $.country = country;
+  }
+  while ($.scene.children.length) {
+    $.scene.remove($.scene.children[0]);
+  }
+  Object.keys(msgs)
+    .filter(key => 'all' === $.country || msgs[key].country === $.country)
+    .slice(-PARTICLE_LIMIT)
+    .forEach(key => $.scene.add(createParticle(msgs[key])));
+}
+
 function handleNewMessages(messages) {
-  messages.forEach((message) => {
-    msgs[message.row] = message;
-    let particle = new THREE.Sprite(new THREE.SpriteCanvasMaterial({ 
-      color: randomColor(), 
-      program: isLiked(message) ? favorite : normal 
-    }));
-    particle.position.x = Math.random() * 1000 - 500;
-    particle.position.y = Math.random() * 1000 - 500;
-    particle.position.z = Math.random() * 1000 - 500;
-    particle.scale.x = particle.scale.y = Number(message.length) + 50;
-    particle.userData = { message: message };
-    //message.particle = particle;
-    $.scene.add(particle);
-    if ($.scene.children.length > PARTICLE_LIMIT) {
-      $.scene.remove($.scene.children[0]);
-    }
-  });
+  messages.forEach((message) => msgs[message.row] = message);
 }
 
 function normal(context) {
