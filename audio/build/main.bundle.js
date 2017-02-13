@@ -31592,7 +31592,7 @@ var Player = function (_React$Component2) {
         case 'CA':
           return 'Canada';
         case 'DE':
-          return 'Germany';
+          return 'Online dialer';
         case 'ET':
           return 'Ethiopia';
         case 'GB':

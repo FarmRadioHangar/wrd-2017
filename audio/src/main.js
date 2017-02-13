@@ -158,7 +158,7 @@ class Player extends React.Component {
     switch (code) {
       case 'BF': return 'Burkina Faso';
       case 'CA': return 'Canada';
-      case 'DE': return 'Germany';
+      case 'DE': return 'Online dialer';
       case 'ET': return 'Ethiopia';
       case 'GB': return 'Great Britain';
       case 'GH': return 'Ghana';
