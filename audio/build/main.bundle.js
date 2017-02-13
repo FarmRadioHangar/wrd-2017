@@ -31663,6 +31663,11 @@ var Player = function (_React$Component2) {
                 _react2.default.createElement(
                   'button',
                   { className: 'btn btn-default dropdown-toggle', type: 'button', id: 'dropdownMenu', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'country-label', style: { fontSize: '11px', paddingRight: '5px' } },
+                    'Show countries'
+                  ),
                   _react2.default.createElement('span', { className: 'caret' })
                 ),
                 _react2.default.createElement(
