@@ -157,6 +157,7 @@ class Player extends React.Component {
   _countryName(code) {
     switch (code) {
       case 'BF': return 'Burkina Faso';
+      case 'BJ': return 'Benin';
       case 'CA': return 'Canada';
       case 'CD': return 'Congo, Democratic Republic';
       case 'CG': return 'Congo';
@@ -172,6 +173,7 @@ class Player extends React.Component {
       case 'MW': return 'Malawi';
       case 'NE': return 'Niger';
       case 'NG': return 'Nigeria';
+      case 'SL': return 'Sierra Leone';
       case 'SN': return 'Senegal';
       case 'SO': return 'Somalia';
       case 'TZ': return 'Tanzania';

@@ -31589,6 +31589,8 @@ var Player = function (_React$Component2) {
       switch (code) {
         case 'BF':
           return 'Burkina Faso';
+        case 'BJ':
+          return 'Benin';
         case 'CA':
           return 'Canada';
         case 'CD':
@@ -31619,6 +31621,8 @@ var Player = function (_React$Component2) {
           return 'Niger';
         case 'NG':
           return 'Nigeria';
+        case 'SL':
+          return 'Sierra Leone';
         case 'SN':
           return 'Senegal';
         case 'SO':
