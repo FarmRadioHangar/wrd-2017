@@ -31720,7 +31720,7 @@ var Player = function (_React$Component2) {
         buffering && _react2.default.createElement(
           'div',
           { className: _player2.default.wave },
-          _react2.default.createElement(_betterReactSpinkit.Wave, { color: '#4a4a4a', columns: 6, size: 70 })
+          _react2.default.createElement(_betterReactSpinkit.Wave, { color: '#2a2a2a', columns: 6, size: 70 })
         ),
         error && _react2.default.createElement(
           'div',
@@ -31895,6 +31895,12 @@ ws.onopen = function (event) {
   }));
 };
 
+(0, _reactDom.render)(_react2.default.createElement(
+  'div',
+  { style: { position: 'absolute', left: 'calc(50% - 40px)', top: '46%' } },
+  _react2.default.createElement(_betterReactSpinkit.DoubleBounce, { color: '#2a2a2a', size: 80 })
+), document.getElementById('player'));
+
 ws.onmessage = function (event) {
   var message = function (data) {
     try {
@@ -31913,6 +31919,7 @@ ws.onmessage = function (event) {
         }).map(function (m) {
           return m.country;
         }) }), document.getElementById('player'));
+      console.log('!');
       break;
     case 'messages_new':
       handleNewMessages(message.data.messages);

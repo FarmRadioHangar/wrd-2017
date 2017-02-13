@@ -1,7 +1,7 @@
 import React      from 'react';
 import { render } from 'react-dom';
 import _          from 'underscore';
-import { Wave }   from 'better-react-spinkit';
+import { Wave, DoubleBounce } from 'better-react-spinkit';
 import ErrorIcon  from 'react-icons/lib/md/block';
 import StopIcon   from 'react-icons/lib/fa/stop-circle-o';
 import styles     from './player.css';
@@ -219,7 +219,7 @@ class Player extends React.Component {
         </div>
         {buffering && (
           <div className={styles.wave}>
-            <Wave color='#4a4a4a' columns={6} size={70} />
+            <Wave color='#2a2a2a' columns={6} size={70} />
           </div>
         )}
         {error && (
@@ -379,6 +379,13 @@ ws.onopen = (event) => {
   }));
 }
 
+render(
+  <div style={{position: 'absolute', left: 'calc(50% - 40px)', top: '46%'}}>
+    <DoubleBounce color='#2a2a2a' size={80} />
+  </div>,
+  document.getElementById('player')
+);
+
 ws.onmessage = (event) => {
   const message = ((data) => {
     try {
@@ -396,6 +403,7 @@ ws.onmessage = (event) => {
         <Player countries={_.uniq(message.data.messages, item => item.country).map(m => m.country)} />,
         document.getElementById('player')
       );
+      console.log('!');
       break;
     case 'messages_new':
       handleNewMessages(message.data.messages);
