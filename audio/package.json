@@ -25,6 +25,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-icons": "^2.2.3",
-    "three": "^0.84.0"
+    "three": "^0.84.0",
+    "underscore": "^1.8.3"
   }
 }
