@@ -31591,6 +31591,14 @@ var Player = function (_React$Component2) {
           return 'Burkina Faso';
         case 'CA':
           return 'Canada';
+        case 'CD':
+          return 'Congo, Democratic Republic';
+        case 'CG':
+          return 'Congo';
+        case 'CI':
+          return 'Cote D\'Ivoire (Ivory Coast)';
+        case 'CM':
+          return 'Cameroon';
         case 'DE':
           return 'Online dialer';
         case 'ET':
@@ -31603,16 +31611,26 @@ var Player = function (_React$Component2) {
           return 'Kenya';
         case 'LS':
           return 'Lesotho';
+        case 'ML':
+          return 'Mali';
         case 'MW':
           return 'Malawi';
+        case 'NE':
+          return 'Niger';
         case 'NG':
           return 'Nigeria';
+        case 'SN':
+          return 'Senegal';
+        case 'SO':
+          return 'Somalia';
         case 'TZ':
           return 'Tanzania';
         case 'UG':
           return 'Uganda';
         case 'US':
           return 'United States';
+        case 'ZA':
+          return 'South Africa';
         case 'ZM':
           return 'Zambia';
         case 'ZW':
