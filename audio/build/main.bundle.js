@@ -31666,7 +31666,7 @@ var Player = function (_React$Component2) {
                   _react2.default.createElement(
                     'span',
                     { className: 'country-label', style: { fontSize: '11px', paddingRight: '5px' } },
-                    'Show countries'
+                    'Countries'
                   ),
                   _react2.default.createElement('span', { className: 'caret' })
                 ),

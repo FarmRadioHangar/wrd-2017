@@ -194,7 +194,7 @@ class Player extends React.Component {
             <div style={{position: 'absolute', right: '20px'}}>
               <div id="country-dropup" className="dropup">
                 <button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span className="country-label" style={{fontSize: '11px', paddingRight: '5px'}}>Show countries</span>
+                  <span className="country-label" style={{fontSize: '11px', paddingRight: '5px'}}>Countries</span>
                   <span className="caret"></span>
                 </button>
                 <ul className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
