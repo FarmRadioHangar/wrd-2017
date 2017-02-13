@@ -365,7 +365,7 @@ function handleNewMessages(messages) {
     particle.position.z = Math.random() * 1000 - 500;
     particle.scale.x = particle.scale.y = Number(message.length) + 50;
     particle.userData = { message: message };
-    message.particle = particle;
+    //message.particle = particle;
     $.scene.add(particle);
     if ($.scene.children.length > PARTICLE_LIMIT) {
       $.scene.remove($.scene.children[0]);
